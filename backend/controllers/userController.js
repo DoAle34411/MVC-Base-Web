@@ -1,4 +1,5 @@
 const User = require('../models/userModel');
+const bcrypt = require('bcrypt');
 
 // Get all users
 const getUsers = async (req, res) => {
@@ -48,17 +49,16 @@ const updateUser = async (req, res) => {
 
         // Update the fields
         user.name = name || user.name;
-        user.password = password || user.password;  // Hash if necessary
-        user.birthDate = birthDate || user.birthDate;
-
         if (password) {
             const salt = await bcrypt.genSalt(10);
             user.password = await bcrypt.hash(password, salt);
         }
+        user.birthDate = birthDate || user.birthDate;
 
         await user.save();
         res.status(200).json({ message: 'User updated successfully' });
     } catch (error) {
+        console.log('Error updating user:', error); 
         res.status(500).json({ message: 'Error updating user', error });
     }
 };

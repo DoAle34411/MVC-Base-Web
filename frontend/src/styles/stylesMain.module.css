@@ -1,0 +1,38 @@
+
+.newButton {
+    margin: 0.25em auto;
+    display: block;
+    outline: none;
+    background: #fb887c;
+    border: none;
+    padding: 1.1em;
+    border-radius: 6px;
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-bottom: 4px solid darken(#fb887c, 5%);
+  }
+
+  .newButton:hover {
+    background:#ec6354;
+  }
+
+  .link {
+    color: #eaf0f2;
+  }
+
+  .link:hover {
+    color: #a4bcc4;
+  }
+
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    height: 100%;
+  }
+
+  .title{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
